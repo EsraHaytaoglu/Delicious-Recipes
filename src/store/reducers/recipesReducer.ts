@@ -1,13 +1,22 @@
-import { Recipe, RecipeAction, RecipeState } from "../../types/recipes";
+import { RecipeAction, RecipeState } from "../../types/recipes";
 
 const defaultState: RecipeState = {
-    data: {} as Recipe,
+    data: [],
     loading: false,
     error: ""
 }
 
 const recipesReducer = (state: RecipeState = defaultState, action: RecipeAction) => {
-    return state;
+    switch (action.type) {
+        case "GET_RECIPES_START":
+          return { ...state, loading: true, error: "" };
+        case "GET_RECIPES_SUCCES":
+          return { ...state, loading: false, data: action.payload };
+        case "GET_RECIPES_ERROR":
+          return { ...state, loading: false, error: "Error fetching categories" };
+        default:
+            return state;
+    }
 }
 
 export default recipesReducer;
