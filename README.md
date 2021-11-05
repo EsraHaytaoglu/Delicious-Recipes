@@ -5,3 +5,4 @@
 + Redux
 + React Router
 + Typescript 
++ Redux Thunk
