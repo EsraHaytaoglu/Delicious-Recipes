@@ -1,27 +1,27 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { AppState }  from "../store"
+import { AppState } from "../store";
 import { getRecipes } from "../store/actions/repiceActions";
-import Recipe from "./Recipe";
+import { Recipe } from "../types/recipes";
+import SingleRecipe from "./Recipe";
 
 function RecipeList() {
-  const { data: recipes } = useSelector(
-    (state: AppState) => state.recipes
-  );
+  const data = useSelector((state: AppState) => state.recipes.data);
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(getRecipes());
-    console.log(recipes);
-    
-
+    console.log(data.feed );
   }, []);
   return (
     <Container fluid="xl" className="container">
-        <h1>recipe list </h1>
+      <h1>recipe list </h1>
       <Row>
-        <Col sm={4}><Recipe /></Col>
+        <Col sm={4}>
+          <SingleRecipe />
+        </Col>
       </Row>
     </Container>
   );

@@ -1,8 +1,9 @@
-import React from "react";
-import "../css/recipe.css"
+import "../css/recipe.css";
 
-function Recipe() {
+const SingleRecipe = () => {
+    
   return (
+
     <div className="card">
       <div className="header">
         <div className="icon">
@@ -12,7 +13,7 @@ function Recipe() {
         </div>
       </div>
       <div className="text">
-        <h1 className="food">Chinese Noodles</h1>
+        <h1 className="food">dispaly</h1>
         <i className="fa fa-clock-o"> 15 Mins</i>
         <i className="fa fa-users"> Serves 2</i>
 
@@ -47,4 +48,4 @@ function Recipe() {
   );
 }
 
-export default Recipe;
+export default SingleRecipe;
