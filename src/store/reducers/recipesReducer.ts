@@ -13,7 +13,7 @@ const recipesReducer = (state: RecipeState = defaultState, action: RecipeAction)
         case "GET_RECIPES_SUCCES":
           return { ...state, loading: false, data: action.payload };
         case "GET_RECIPES_ERROR":
-          return { ...state, loading: false, error: "Error fetching categories" };
+          return { ...state, loading: false, error: "Error fetching recipes" };
         default:
             return state;
     }

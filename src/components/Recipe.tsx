@@ -1,51 +1,41 @@
+
+import { FunctionComponent } from "react";
+import { Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../css/recipe.css";
+import { Recipe } from "../types/recipes";
 
-const SingleRecipe = () => {
-    
-  return (
-
-    <div className="card">
-      <div className="header">
-        <div className="icon">
-          <a href="#">
-            <i className="fa fa-heart-o"></i>
-          </a>
-        </div>
-      </div>
-      <div className="text">
-        <h1 className="food">dispaly</h1>
-        <i className="fa fa-clock-o"> 15 Mins</i>
-        <i className="fa fa-users"> Serves 2</i>
-
-        <div className="stars">
-          <li>
-            <a href="#">
-              <i className="fa fa-star"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-star"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-star"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-star"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-star-o"></i>
-            </a>
-          </li>
-        </div>
-        <p className="info">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum,
-          temporibus.
-        </p>
-      </div>
-      <a href="#" className="btn">
-        Let's Cook!
-      </a>
-    </div>
-  );
+interface IRecipeProps {
+  recipe: Recipe
 }
+
+const SingleRecipe: FunctionComponent<IRecipeProps> = (props) => {
+  const { recipe } =props;
+  return (
+    <Col>
+      <div className="card">
+        <Image
+          src={recipe.image}
+          className="header"
+        />
+        <div className="text">
+          <h1 className="food">{recipe.name}</h1>
+          <i className="fa fa-clock-o">{recipe.totalTime} min </i>
+          <i className="fa fa-users">
+
+            Serves {recipe.servesNumber}
+          </i>
+          <p className="info">
+            {recipe.directions[0] + "..."}
+            
+          </p>
+        </div>
+        <div className="btn">
+          Let's Cook!
+        </div>
+      </div>
+    </Col>
+  );
+};
 
 export default SingleRecipe;

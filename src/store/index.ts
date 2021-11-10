@@ -5,8 +5,8 @@ import recipesReducer from "./reducers/recipesReducer";
 export interface AppState {
     recipes: RecipeState;
 }
-const rootReducer = combineReducers<AppState>({
-    recipes:recipesReducer,
+const rootReducer = combineReducers({
+    recipes: recipesReducer,
 
 });
 

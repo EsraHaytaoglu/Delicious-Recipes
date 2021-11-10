@@ -1,13 +1,11 @@
 
+import { Link } from "react-router-dom";
 import "../css/header.css"
 
 function Header() {
   return (
     <nav className="navMenu">
-      <a href="#">Home</a>
-      <a href="#">Blog</a>
-      <a href="#">Work</a>
-      <a href="#">About</a>
+      <Link to="/"><p>Recipe List</p></Link>
       <div className="dot"></div>
     </nav>
   );

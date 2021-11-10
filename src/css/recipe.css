@@ -10,32 +10,18 @@
 }
 
 .card .header {
-  background: url("http://img.taste.com.au/UZVXAdo7/taste/2016/11/chinese-egg-noodle-and-vegetable-stir-fry-94186-1.jpeg") no-repeat center;
-  background-size: cover;
-  min-height: 350px;
+  max-height: 250px;
 }
 
-.card .header .icon a .fa-heart-o {
-  position: absolute;
-  left: 85%;
-  bottom: 30.7%;
-  background: #17BEBB;
-  color: #fff;
-  font-size: 1.3em;
-  font-weight: bold;
-  padding: 15px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 5px 30px 1px #17BEBB;
-  box-shadow: 0px 5px 30px 1px #17BEBB;
-}
 
 .card .text .food {
   color: wheat;
-  text-align: left;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin: 5px 30px;
+  margin: 5px 0px;
+  padding-left: 10%;
+  font-size: 21px;
 }
 
 .card .text .fa-clock-o {
@@ -47,19 +33,13 @@
   color: #9B9B9B;
 }
 
-.card .stars {
-  margin: 10px 30px;
-}
 
-.card .stars li a i {
-  color: #FFE500;
-}
 
 .card .info {
   margin: 10px 30px;
 }
 
-.card a.btn {
+.btn {
   display: block;
   background: #EF3E36;
   color: #fff;
