@@ -2,7 +2,7 @@
   .card-container {
     margin: 25px auto 0;
     position: relative;
-    width: 692px;
+    width: 100%;
   }
   
   .card {
@@ -12,8 +12,7 @@
   }
   
   .card-body {
-    float: left;
-    width: 310px;
+    width: 450px;
   }
   
   .card-number {
@@ -80,5 +79,13 @@
   }
   .right{
     float: right;
+    background: transparent;
+    padding: 3%;
+    color: wheat;
+  }
+  .backBtn{
+    width: 20%;
+    margin: 5%;
+    padding: 0%;
   }
   

@@ -1,40 +1,83 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { BsSuitHeart } from  "react-icons/bs";
+import { Link, useParams } from "react-router-dom";
+import { BsSuitHeart } from "react-icons/bs";
+import { Alert, Button } from "react-bootstrap";
 
-import "../css/detail.css"
+import "../css/detail.css";
 import { AppState } from "../store";
 import { getRecipe } from "../store/actions/repiceActions";
+import { addFavList } from "../store/actions/favActions";
 
 
 function RecipeDetail() {
-    const { id } = useParams();
-    const dispatch = useDispatch();
-    const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
-    console.log(recipe);
-    useEffect(() => {
-        dispatch(getRecipe(Number(id)));
-      }, []);
+  const { id} = useParams();
+  
+  const dispatch = useDispatch();
+  const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
+  const favId = useSelector((state:AppState)=> state.favList)
+  
+  
+  const [show, setShow] = useState(false);
+  useEffect(() => {
     
-    return (
-        <div className="card-container">
-  <div className="card u-clearfix">
-    <div className="card-body">
-      <span className="card-number card-circle subtle">{recipe.totalTime} min</span>
-      <div className="right"><BsSuitHeart /></div>
-      <span className="card-author subtle">{recipe.author }</span>
-      <h2 className="card-title">{recipe.name}</h2>
-      <div>{recipe.description}</div>
-      <h3 >İçindekiler</h3>
+    dispatch(getRecipe(Number(id)));
+  }, []);
 
-     <div className="card-description subtle">{recipe.ingredients[0]}</div>
-      <span className="card-tag card-circle subtle">{recipe.servesNumber} serves</span>
-    </div>
-    <img src={recipe.image} alt="" className="card-media" />
-  </div>
-</div>
-    )
+  const handleClick = () => {
+    setShow(true);
+    dispatch(addFavList(Number(id)))
+  }
+
+  return (
+    <React.Fragment>
+      <Alert show={show} variant="success" className="container">
+        <Alert.Heading>Success </Alert.Heading>
+        <p>This recipe added your fav list.</p>
+        <hr />
+        <div className="d-flex justify-content-end ">
+          <Button onClick={() => setShow(false)} >
+            Close me 
+          </Button>
+          <Link to="/favs">
+          <Button>
+            Go to Fav List
+          </Button>
+          </Link>
+        </div>
+      </Alert>
+      {!show && (
+        <div className="card-container">
+          <div className="card u-clearfix">
+            <div className="card-body">
+              <span className="card-number card-circle subtle">
+                {recipe.totalTime} min
+              </span>
+              <button className="right" onClick={handleClick}>
+                Beğen <BsSuitHeart />
+              </button>
+              <span className="card-author subtle">{recipe.author}</span>
+              <h2 className="card-title">{recipe.name}</h2>
+              <div>{recipe.description}</div>
+              <h3>İçindekiler</h3>
+
+              {recipe.ingredients.map((ing,i) => {
+                return (
+                  <div className="card-description subtle" key={i}>{ing.split("")}</div>
+                );
+              })}
+              <span className="card-tag card-circle subtle">
+                {recipe.servesNumber} serves
+              </span>
+            </div>
+            <img src={recipe.image} alt="" className="card-media" />
+            <Link to="/"><button className="backBtn right"> Back </button></Link>
+          </div>
+          
+        </div>
+      )}
+    </React.Fragment>
+  );
 }
 
-export default RecipeDetail
+export default RecipeDetail;

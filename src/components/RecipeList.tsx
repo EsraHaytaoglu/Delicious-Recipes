@@ -4,17 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { AppState } from "../store";
 import { getRecipes } from "../store/actions/repiceActions";
+import Header from "./Header";
 import SingleRecipe from "./Recipe";
 
 function RecipeList() {
   const data = useSelector((state: AppState) => state.recipes.data);
   const dispatch = useDispatch();
-  console.log(data);
 
   useEffect(() => {
     dispatch(getRecipes());
   }, []);
   return (
+    <React.Fragment>
+    <Header />
     <Container fluid="xl" className="container">
       <Row xs={1} md={3}>
         {data.map((recipe, i)=> (
@@ -23,6 +25,7 @@ function RecipeList() {
           
       </Row>
     </Container>
+    </React.Fragment>
   );
 }
 
