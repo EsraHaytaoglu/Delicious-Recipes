@@ -1,68 +1,43 @@
 
-.navMenu {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+header {
+	background: url('https://images.squarespace-cdn.com/content/v1/58c0406fa5790a1ebbb38915/1545341206240-187MTPUBGYKIWHESUM2I/recipe+header-01.jpg?format=1000w');
+	text-align: center;
+	width: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+  box-shadow: 0px 0px 5px pink;
+}
+header .overlay{
+	width: 100%;
+	padding: 5px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg,  #272727 100%);
+	
 }
 
-.navMenu p {
-  color: wheat;
-  text-decoration: none;
-  font-size: 1.3em;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: inline-block;
-  width: 150px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.baslik {
+	font-size: calc(1em + 1vw);
+  font-family: 'Irish Grover', cursive !important;
+	font-weight: 700;
+	letter-spacing: .01em;
+	padding: 2rem 0 0 4.5rem;
+	text-shadow: .022em .022em .022em #111;
+  justify-content: center;
+}
+.julia {
+ margin-left: 50%;
+ color: wheat
+}
+.quote {
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 700;
+	letter-spacing: .01em;
+	padding: 0 0 0 4.5rem;
+  color: white;
 }
 
-.navMenu p:hover {
-  color: #fddb3a;
-}
-
-.navMenu .dot {
-  width: 6px;
-  height: 6px;
-  background: #fddb3a;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.navMenu p:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu p:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(110px);
-  transform: translateX(110px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu p:nth-child(3):hover ~ .dot {
-  -webkit-transform: translateX(200px);
-  transform: translateX(200px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu div:nth-child(4):hover ~ .dot {
-  -webkit-transform: translateX(285px);
-  transform: translateX(285px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}

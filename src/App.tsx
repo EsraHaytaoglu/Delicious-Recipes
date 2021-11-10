@@ -6,7 +6,6 @@ import Header from './components/Header';
 import RecipeList from './components/RecipeList';
 import RecipeDetail from './components/RecipeDetail';
 
-
 function App() {
   return (
     <React.Fragment>

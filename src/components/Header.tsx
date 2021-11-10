@@ -4,10 +4,15 @@ import "../css/header.css"
 
 function Header() {
   return (
-    <nav className="navMenu">
-      <Link to="/"><p>Recipe List</p></Link>
-      <div className="dot"></div>
-    </nav>
+    <header>
+    <div className="overlay">
+  <div className="baslik"></div>
+  <div>
+  <div className="quote"> "I was 32 when I started cooking; up until then, I just ate."</div>
+  <span className="julia">Julia Child</span>
+  </div>
+      </div>
+  </header>
   );
 }
 

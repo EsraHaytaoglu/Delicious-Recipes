@@ -10,4 +10,14 @@ export const getRecipes = () => async (dispatch: RecipesDispatch) => {
       dispatch({ type: "GET_RECIPES_ERROR" });
     }
   };
+
+  export const getRecipe = (id: number) => async (dispatch: RecipesDispatch) => {
+    dispatch({ type: "GET_RECIPE_START" });
+    try {
+      const response = await api().get<Recipe>("/recipes/" + id );
+      dispatch({ type: "GET_RECIPE_SUCCES", payload: response.data });
+    } catch {
+      dispatch({ type: "GET_RECIPE_ERROR" });
+    }
+  };
   
