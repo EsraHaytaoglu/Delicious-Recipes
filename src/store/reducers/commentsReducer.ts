@@ -16,6 +16,12 @@ const commentsReducer = (state: CommentState = defaultState, action: CommentActi
           return { ...state, loading: false, data: action.payload };
         case "GET_COMMENTS_ERROR":
           return { ...state, loading: false, error: "Error fetching comments" };
+        case "ADD_COMMENT_START":
+          return { ...state, loading: true, error: "" };
+        case "ADD_COMMENT_SUCCES":
+          return { ...state, loading: false,  data: [action.payload, ...state.data], };
+        case "ADD_COMMENT_ERROR":
+          return { ...state, loading: false, error: "Error adding comments" };
         default:
             return state;
     }
