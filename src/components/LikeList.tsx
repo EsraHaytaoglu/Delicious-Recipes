@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { BsClock } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,8 @@ function LikeList() {
   const navigate = useNavigate();
   
   const FavRecipes = useSelector((state: AppState) => state.favList.data);
-  console.log(FavRecipes, "Favrecipe");
+
+
 
   const deleteClick = (id : Recipe['id']) => {
     dispatch(deleteFav(id));
@@ -28,7 +29,10 @@ function LikeList() {
           <React.Fragment>
       <h1>My Favorite Recipes</h1>
       {FavRecipes.length === 0 && (
-        <h3 className="center"> No fav recipes </h3>
+        <Container className="center">
+        <h3 > No fav recipes </h3>
+        <Link to="/"><div className="btn">Back</div></Link>
+        </Container>
       )}
       {FavRecipes.map((favRecipe, i) => (
         <div className="container mt-5 mb-5 bg " key={i}>
