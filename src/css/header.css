@@ -50,14 +50,13 @@ header .overlay{
 	transform: translate(-50%, -50%);
   }
   
-  .navMenu a {
+  .navMenu div {
 	color: #f6f4e6;
 	text-decoration: none;
 	font-size: 1.2em;
 	text-transform: uppercase;
 	font-weight: 500;
 	display: inline-block;
-	width: 80px;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
   }

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
-import { Alert, Button } from "react-bootstrap";
+import { Alert, Button, Col, Row } from "react-bootstrap";
 
 import "../css/detail.css";
 import { AppState } from "../store";
 import { getRecipe } from "../store/actions/repiceActions";
 import { Recipe } from "../types/recipes";
 import { addFavList } from "../store/actions/favActions";
+import Loading from "../utils/Loading";
+import CommentList from "./CommentList";
 
 
 function RecipeDetail() {
@@ -16,9 +18,7 @@ function RecipeDetail() {
   
   const dispatch = useDispatch();
   const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
-
-  
-  
+  const loading = useSelector((state: AppState) => state.recipes.loading);
   
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -32,6 +32,7 @@ function RecipeDetail() {
 
   return (
     <React.Fragment>
+      <Row>
       <Alert show={show} variant="success" className="container">
         <Alert.Heading>Success </Alert.Heading>
         <p>This recipe added your fav list.</p>
@@ -47,7 +48,8 @@ function RecipeDetail() {
           </Link>
         </div>
       </Alert>
-      {!show && (
+      {!show && !loading && (
+        <Col>
         <div className="card-container">
           <div className="card u-clearfix">
             <div className="card-body">
@@ -76,7 +78,15 @@ function RecipeDetail() {
           </div>
           
         </div>
+        </Col>
       )}
+      {loading && (
+        <Loading />
+      )}
+      <Col>
+      <CommentList id = {recipe.id} />
+      </Col>
+      </Row>
     </React.Fragment>
   );
 }

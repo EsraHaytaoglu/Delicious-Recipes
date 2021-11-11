@@ -1,6 +1,8 @@
 
 import React from "react";
+import { BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 import "../css/header.css"
 
 function Header() {
@@ -17,7 +19,7 @@ function Header() {
 
   </header>
         <nav className="navMenu">
-        <a href="/favs">Fav List</a>
+        <Link to="/favs"><div> <BsSuitHeart /> Fav List  <BsSuitHeart /> </div></Link>
         <div className="dot"></div>
       </nav>
       </React.Fragment>

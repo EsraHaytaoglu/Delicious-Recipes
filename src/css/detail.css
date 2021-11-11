@@ -1,8 +1,13 @@
 
   .card-container {
-    margin: 25px auto 0;
+    margin: 25px 0 0;
     position: relative;
     width: 100%;
+  }
+  .comment-container {
+    margin: 25px 0 0;
+    position: relative;
+    width: 80%;
   }
   
   .card {
