@@ -7,6 +7,7 @@ import { Alert, Button } from "react-bootstrap";
 import "../css/detail.css";
 import { AppState } from "../store";
 import { getRecipe } from "../store/actions/repiceActions";
+import { Recipe } from "../types/recipes";
 import { addFavList } from "../store/actions/favActions";
 
 
@@ -15,18 +16,18 @@ function RecipeDetail() {
   
   const dispatch = useDispatch();
   const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
-  const favId = useSelector((state:AppState)=> state.favList)
+
+  
   
   
   const [show, setShow] = useState(false);
   useEffect(() => {
-    
     dispatch(getRecipe(Number(id)));
   }, []);
 
-  const handleClick = () => {
+  const handleClick = (recipe : Recipe) => {
+    dispatch(addFavList(recipe));
     setShow(true);
-    dispatch(addFavList(Number(id)))
   }
 
   return (
@@ -53,7 +54,7 @@ function RecipeDetail() {
               <span className="card-number card-circle subtle">
                 {recipe.totalTime} min
               </span>
-              <button className="right" onClick={handleClick}>
+              <button className="right" onClick={() => handleClick(recipe)}>
                 Beğen <BsSuitHeart />
               </button>
               <span className="card-author subtle">{recipe.author}</span>

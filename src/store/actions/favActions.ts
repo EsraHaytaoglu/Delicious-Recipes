@@ -1,13 +1,10 @@
-import { favItem, FavDispatch } from "../../types/favs";
-import api from "../../utils/api";
+import { FavRecipe } from "../../types/favs";
 
 
-export const addFavList = (id: favItem["favId"]) => async (dispatch: FavDispatch) => {
-    dispatch({ type: "ADD_FAV_LIST_START" });
-    try {
-      const response = await api().post<favItem>("/favs", id);
-      dispatch({ type: "ADD_FAV_LIST_SUCCESS", payload: response.data });
-    } catch {
-      dispatch({ type: "ADD_FAV_LIST_ERROR" });
-    }
+export const addFavList = (recipe: FavRecipe)  => {
+    return { type: "ADD_FAV_LIST", payload: recipe  }
   };
+
+export const deleteFav = (id: FavRecipe['id'] ) => {
+  return { type: "DELETE_FAV", payload: id}
+}

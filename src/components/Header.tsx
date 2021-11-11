@@ -17,7 +17,7 @@ function Header() {
 
   </header>
         <nav className="navMenu">
-        <a href="#">Fav List</a>
+        <a href="/favs">Fav List</a>
         <div className="dot"></div>
       </nav>
       </React.Fragment>

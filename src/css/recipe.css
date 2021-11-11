@@ -40,7 +40,7 @@
 }
 
 .btn {
-  display: block;
+  display: inline-block;
   background: #EF3E36;
   color: #fff;
   position: relative;

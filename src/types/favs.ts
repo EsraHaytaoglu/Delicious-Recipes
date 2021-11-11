@@ -1,29 +1,33 @@
-import { ThunkDispatch } from "redux-thunk";
 
-export interface favItem {
-    favId: Number
+
+
+export interface FavRecipe {
+    id: Number,
+    name: string,
+    description: string,
+    ingredients: Array<string>,
+    servesNumber: Number,
+    directions: Array<string>,
+    totalTime: Number,
+    image: any,
+    author: string,
 }
-
 export interface FavState {
-    data: favItem[];
-    loading: boolean;
-    error: string;
+    data: FavRecipe[];
+
 }
 
-interface ADD_FAV_LIST_START {
-    type: "ADD_FAV_LIST_START"
+interface ADD_FAV_LIST {
+    type: "ADD_FAV_LIST"
+    payload: FavRecipe; 
 }
-interface ADD_FAV_LIST_SUCCESS {
-    type: "ADD_FAV_LIST_SUCCESS"
-    payload: favItem; 
+interface DELETE_FAV {
+    type: "DELETE_FAV"
+    payload: FavRecipe['id']; 
 }
-interface ADD_FAV_LIST_ERROR {
-    type: "ADD_FAV_LIST_ERROR"
-}
+
 
 export type FavAction = 
-| ADD_FAV_LIST_START
-| ADD_FAV_LIST_SUCCESS
-| ADD_FAV_LIST_ERROR
+| ADD_FAV_LIST
+| DELETE_FAV
 
-export type FavDispatch = ThunkDispatch<FavState,void,FavAction>;
