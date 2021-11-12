@@ -10,13 +10,14 @@ import "../css/like.css";
 import { AppState } from "../store";
 import { deleteFav } from "../store/actions/favActions";
 import { Recipe } from "../types/recipes";
-import { FavRecipe } from "../types/favs"
+
 
 function LikeList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const FavRecipes = useSelector((state: AppState) => state.favList.data);
 
+  console.log(FavRecipes);
   
 
   const deleteClick = (id : Recipe['id']) => {
@@ -92,7 +93,7 @@ function LikeList() {
                   <FaUsers /> Serves {favRecipe.servesNumber}
                 </h6>
                 <div className="d-flex flex-column mt-4">
-                  <Link to="/recipes">
+                  <Link to="/">
                     <button className="btn btn-primary btn-sm " type="button">
                       Back to Home Page
                     </button>

@@ -66,7 +66,8 @@ function RecipeDetail() {
               This recipe deleted.
             </p>
             <Link to="/">
-              <Button onClick={() => handleClose()}>Go to Home Page</Button>
+              <Button onClick={() =>{handleClick(recipe)
+              handleClose()} }>Go to Home Page</Button>
             </Link>
           </Alert>
           )
