@@ -10,15 +10,14 @@ import "../css/like.css";
 import { AppState } from "../store";
 import { deleteFav } from "../store/actions/favActions";
 import { Recipe } from "../types/recipes";
+import { FavRecipe } from "../types/favs"
 
 function LikeList() {
-  const recipe = JSON.parse(localStorage.getItem("recipe") || "");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
   const FavRecipes = useSelector((state: AppState) => state.favList.data);
 
-
+  
 
   const deleteClick = (id : Recipe['id']) => {
     dispatch(deleteFav(id));
@@ -113,7 +112,7 @@ function LikeList() {
       </div>
 
       ))}
-      
+     
       </React.Fragment>
   );
 }
