@@ -38,6 +38,17 @@ interface ADD_COMMENT_ERROR {
    type: "ADD_COMMENT_ERROR";
 
 }
+interface DELETE_COMMENT_START {
+    type: "DELETE_COMMENT_START"
+}
+interface DELETE_COMMENT_SUCCES {
+   type: "DELETE_COMMENT_SUCCES";
+   payload: Comment['id']; 
+}
+interface DELETE_COMMENT_ERROR {
+   type: "DELETE_COMMENT_ERROR";
+
+}
 export type CommentAction = 
 | GET_COMMENTS_START
 | GET_COMMENTS_SUCCES
@@ -45,6 +56,9 @@ export type CommentAction =
 | ADD_COMMENT_START
 | ADD_COMMENT_SUCCES
 | ADD_COMMENT_ERROR
+| DELETE_COMMENT_START
+| DELETE_COMMENT_SUCCES
+| DELETE_COMMENT_ERROR
 
 
 export type CommentsDispatch = ThunkDispatch<CommentState,void,CommentAction>;

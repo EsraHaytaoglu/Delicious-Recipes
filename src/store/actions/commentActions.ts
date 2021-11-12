@@ -21,3 +21,13 @@ export const getComments = (id: Recipe['id']) => async (dispatch: CommentsDispat
       dispatch({ type: "ADD_COMMENT_ERROR" });
     }
   };
+
+  export const deleteComment = ( id: Comment['id']) => async (dispatch: CommentsDispatch) => {
+    dispatch({ type: "DELETE_COMMENT_START" });
+    try {
+      await api().delete<Comment>("/comments/"+ id );
+      dispatch({ type: "DELETE_COMMENT_SUCCES", payload: id });
+    } catch {
+      dispatch({ type: "DELETE_COMMENT_ERROR" });
+    }
+  };

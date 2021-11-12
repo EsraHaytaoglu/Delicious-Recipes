@@ -93,4 +93,11 @@
     margin: 5%;
     padding: 0%;
   }
+
+  .deleteBtn {
+    background: transparent;
+    width: 30%;
+    margin-left: 70%;
+    color: wheat;
+  }
   

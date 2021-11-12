@@ -5,7 +5,8 @@ import {useNavigate} from 'react-router-dom';
 
 
 import { AppState } from '../store';
-import { getComments } from '../store/actions/commentActions';
+import { deleteComment, getComments } from '../store/actions/commentActions';
+import { Comment } from "../types/comments"
 
 
 interface ICommentsProps {
@@ -25,6 +26,10 @@ const CommentList:FunctionComponent<ICommentsProps> = (props) =>  {
     const addComment = () => {
         navigate('/addComment')
     }
+
+    const handleDelete = (id : Comment['id']) => {
+        dispatch(deleteComment(Number(id)))
+    }
     
     return (
         <div className="comment-container card u-clearfix">
@@ -35,6 +40,7 @@ const CommentList:FunctionComponent<ICommentsProps> = (props) =>  {
                      <div className="card">
                      <h5 className="food">{yorum.author}</h5>
                      <div className="text">{yorum.body}</div>
+                     <button className='deleteBtn' onClick={()=> handleDelete(yorum.id)} >Delete</button>
                      </div>
                 </Row>
             ))}
