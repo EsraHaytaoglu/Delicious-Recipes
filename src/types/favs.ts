@@ -1,52 +1,61 @@
 import { ThunkDispatch } from "redux-thunk";
+import { Recipe } from "./recipes";
 
 
 
-export interface FavRecipe {
-    id: Number,
-    name: string,
-    description: string,
-    ingredients: Array<string>,
-    servesNumber: Number,
-    directions: Array<string>,
-    totalTime: Number,
-    image: any,
-    author: string,
-}
 export interface FavState {
-    data: FavRecipe[];
+    data: Recipe[];
     loading: boolean;
     error: string;
-
 }
 
-interface ADD_FAV_LIST {
-    type: "ADD_FAV_LIST"
-    payload: FavRecipe; 
-}
-interface DELETE_FAV {
-    type: "DELETE_FAV"
-    payload: FavRecipe['id']; 
-}
 interface GET_FAVS_START {
     type: "GET_FAVS_START"
 }
 interface GET_FAVS_SUCCESS {
    type: "GET_FAVS_SUCCESS";
-   payload: FavRecipe; 
+   payload: Recipe[]; 
 }
 interface GET_FAVS_ERROR {
    type: "GET_FAVS_ERROR";
 
 }
 
+interface ADD_FAV_START {
+    type: "ADD_FAV_START"
+}
+interface ADD_FAV_SUCCESS {
+   type: "ADD_FAV_SUCCESS";
+   payload: Recipe; 
+}
+interface ADD_FAV_ERROR {
+   type: "ADD_FAV_ERROR";
+
+}
+
+interface DELETE_FAV_START {
+    type: "DELETE_FAV_START"
+}
+interface DELETE_FAV_SUCCESS {
+   type: "DELETE_FAV_SUCCESS";
+   payload: Recipe['id']; 
+}
+interface DELETE_FAV_ERROR {
+   type: "DELETE_FAV_ERROR";
+
+}
+
 
 export type FavAction = 
-| ADD_FAV_LIST
-| DELETE_FAV
 | GET_FAVS_START
 | GET_FAVS_SUCCESS
 | GET_FAVS_ERROR
+| ADD_FAV_START
+| ADD_FAV_SUCCESS
+| ADD_FAV_ERROR
+| DELETE_FAV_START
+| DELETE_FAV_SUCCESS
+| DELETE_FAV_ERROR
 
 
 export type FavsDispatch = ThunkDispatch<FavState,void,FavAction>;

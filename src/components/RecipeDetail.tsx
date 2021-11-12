@@ -13,6 +13,7 @@ import { addFavList } from "../store/actions/favActions";
 import Loading from "../utils/Loading";
 import CommentList from "./CommentList";
 
+
 function RecipeDetail() {
   const { id } = useParams();
 
