@@ -20,4 +20,14 @@ export const getRecipes = () => async (dispatch: RecipesDispatch) => {
       dispatch({ type: "GET_RECIPE_ERROR" });
     }
   };
+
+  export const deleteRecipe = (id: Recipe['id']) => async (dispatch: RecipesDispatch) => {
+    dispatch({ type: "GET_RECIPE_START" });
+    try {
+      const response = await api().delete<Recipe>("/recipes/" + id );
+      dispatch({ type: "GET_RECIPE_SUCCES", payload: response.data });
+    } catch {
+      dispatch({ type: "GET_RECIPE_ERROR" });
+    }
+  };
   

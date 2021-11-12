@@ -100,4 +100,11 @@
     margin-left: 70%;
     color: wheat;
   }
+  .delBtn {
+    background: transparent;
+    width: 20%;
+    color: wheat;
+    margin-left: 50%;
+    margin-top: 5%;
+  }
   

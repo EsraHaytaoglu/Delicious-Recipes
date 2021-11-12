@@ -31,6 +31,13 @@ const recipesReducer = (state: RecipeState = defaultState, action: RecipeAction)
           return { ...state, loading: false, currentRecipe: action.payload };
         case "GET_RECIPE_ERROR":
           return { ...state, loading: false, error: "Error fetching recipe" };
+        case "DELETE_RECIPE_START":
+          return { ...state, loading: true, error: "" };
+        case "DELETE_RECIPE_SUCCES":
+          return { ...state, loading: false, data: state.data.filter((recipe) =>
+            recipe.id !== action.payload) };
+        case "DELETE_RECIPE_ERROR":
+          return { ...state, loading: false, error: "Error deleting recipe" };
         default:
             return state;
     }

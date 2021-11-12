@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
 import { Alert, Button, Col, Row } from "react-bootstrap";
+import {useNavigate} from 'react-router-dom';
 
 import "../css/detail.css";
 import { AppState } from "../store";
-import { getRecipe } from "../store/actions/repiceActions";
+import { deleteRecipe, getRecipe } from "../store/actions/repiceActions";
 import { Recipe } from "../types/recipes";
 import { addFavList } from "../store/actions/favActions";
 import Loading from "../utils/Loading";
@@ -19,8 +20,10 @@ function RecipeDetail() {
   const dispatch = useDispatch();
   const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
   const loading = useSelector((state: AppState) => state.recipes.loading);
+  const navigate = useNavigate();
+  const [deleteMi, setDeleteMi]= useState<boolean>(false)
   
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
   useEffect(() => {
     dispatch(getRecipe(Number(id)));
   }, []);
@@ -30,13 +33,23 @@ function RecipeDetail() {
     setShow(true);
   }
 
+  const handleDelete = (id: Recipe['id']) => {
+    dispatch(deleteRecipe(id));
+    setShow(true);
+    setDeleteMi(true)
+    navigate('/');
+    setDeleteMi(false);
+
+    
+  }
+
 
   return (
     <React.Fragment>
       <Row>
       <Alert show={show} variant="success" className="container">
         <Alert.Heading>Success </Alert.Heading>
-        <p>This recipe added your fav list.</p>
+        <p> {deleteMi === true ? "this recipe deleted" : "This recipe added your fav list."}</p>
         <hr />
         <div className="d-flex justify-content-end ">
           <Button onClick={() => setShow(false)} >
@@ -49,7 +62,7 @@ function RecipeDetail() {
           </Link>
         </div>
       </Alert>
-      {!show && !loading && (
+      {!show && !loading && deleteMi === false && (
         <Col>
         <div className="card-container">
           <div className="card u-clearfix">
@@ -75,7 +88,9 @@ function RecipeDetail() {
               </span>
             </div>
             <img src={recipe.image} alt="" className="card-media" />
+            <div>
             <Link to="/"><button className="backBtn right"> Back </button></Link>
+            <button className="delBtn" onClick={()=> handleDelete(recipe.id)}>Delete </button> </div>
           </div>
           
         </div>

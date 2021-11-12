@@ -41,6 +41,17 @@ interface GET_RECIPE_ERROR {
    type: "GET_RECIPE_ERROR";
 
 }
+interface DELETE_RECIPE_START {
+    type: "DELETE_RECIPE_START"
+}
+interface DELETE_RECIPE_SUCCES {
+   type: "DELETE_RECIPE_SUCCES";
+   payload: Recipe['id']; 
+}
+interface DELETE_RECIPE_ERROR {
+   type: "DELETE_RECIPE_ERROR";
+
+}
 
 export type RecipeAction = 
 | GET_RECIPES_START
@@ -49,5 +60,8 @@ export type RecipeAction =
 | GET_RECIPE_START
 | GET_RECIPE_SUCCES
 | GET_RECIPE_ERROR
+| DELETE_RECIPE_START
+| DELETE_RECIPE_SUCCES
+| DELETE_RECIPE_ERROR
 
 export type RecipesDispatch = ThunkDispatch<RecipeState,void,RecipeAction>;
