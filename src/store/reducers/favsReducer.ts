@@ -2,6 +2,8 @@ import { FavAction, FavState } from "../../types/favs";
 
 const defaultState: FavState = {
   data: [],
+  loading: false,
+  error: "",
 };
 const favsReducer = (state: FavState = defaultState, action: FavAction) => {
   switch (action.type) {

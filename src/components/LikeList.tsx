@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import "../css/like.css";
 import { AppState } from "../store";
-import { deleteFav } from "../store/actions/favActions";
+import { deleteFav, getFavs } from "../store/actions/favActions";
 import { Recipe } from "../types/recipes";
 
 
@@ -19,6 +19,10 @@ function LikeList() {
 
   console.log(FavRecipes);
   
+  useEffect(() => {
+    dispatch(getFavs())
+  }, [])
+
 
   const deleteClick = (id : Recipe['id']) => {
     dispatch(deleteFav(id));
