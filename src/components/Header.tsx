@@ -9,7 +9,7 @@ function Header() {
   return (
     <React.Fragment>
     <header>
-    <div className="overlay">
+    <div className="overlay d-none d-lg-block">
   <div className="baslik"></div>
   <div>
   <div className="quote"> "I was 32 when I started cooking; up until then, I just ate."</div>

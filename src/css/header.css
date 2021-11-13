@@ -7,6 +7,7 @@ header {
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
+	display: block;
 	border-radius: 0 0 85% 85% / 30%;
   box-shadow: 0px 0px 5px pink;
 }
@@ -20,7 +21,6 @@ header .overlay{
 }
 
 .baslik {
-	font-size: calc(1em + 1vw);
   font-family: 'Irish Grover', cursive !important;
 	font-weight: 700;
 	letter-spacing: .01em;
@@ -43,9 +43,10 @@ header .overlay{
 
 
 .navMenu {
-	position: absolute;
-	top: 20%;
-	left: 50%;
+	position: relative;
+	margin-left: 58%;
+	margin-top: 2%;
+	margin-bottom: -4%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
   }
