@@ -35,7 +35,7 @@ export const getRecipes = () => async (dispatch: RecipesDispatch) => {
   export const addRecipe = (recipe: Recipe ) => async (dispatch: RecipesDispatch) => {
     dispatch({ type: "ADD_RECIPE_START" });
     try {
-      const response = await api().post<Recipe>(`/comments`, recipe);
+      const response = await api().post<Recipe>(`/recipes`, recipe);
       dispatch({ type: "ADD_RECIPE_SUCCES", payload: response.data });
     } catch {
       dispatch({ type: "ADD_RECIPE_ERROR" });
