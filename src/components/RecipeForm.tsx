@@ -36,7 +36,7 @@ function RecipeForm() {
       }
       console.log(values);
          dispatch(addRecipe(form));
-        // navigate('/')
+        navigate('/')
     },
   });
   return (
