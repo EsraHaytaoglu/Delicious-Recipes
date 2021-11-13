@@ -8,7 +8,7 @@
 + Redux Thunk
 
 ### Rest Api
-Backend olarak json-server kullarak oluşturduğum rest apiyi kullandım.
+Backend olarak json-server kullanarak oluşturduğum rest apiyi kullandım.
 [api linki ](https://esra-recipe.herokuapp.com/)
 
 ### Api Endpoints 
