@@ -1,24 +1,42 @@
 import { useFormik } from "formik";
 import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addRecipe } from "../store/actions/repiceActions";
 
 function RecipeForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const createdAt = Number(new Date());
+  
+
   const formik = useFormik({
     initialValues: {
       name: "",
       description: "",
-      ingredients: [],
+      ingredients: "",
       servesNumber: 0,
-      directions: [],
+      directions: "",
       totalTime: 0,
       image: "",
       author: "",
     },
     onSubmit: (values) => {
+      const form ={
+        name : values.name,
+        description: values.description,
+        ingredients: values.ingredients,
+        servesNumber: values.servesNumber,
+        directions: values.directions,
+        totalTime: values.totalTime,
+        image: values.image,
+        author: values.author,
+        id : createdAt,
+      }
       console.log(values);
-      //    dispatch(addComment(form));
-      //   navigate('/')
+         dispatch(addRecipe(form));
+        // navigate('/')
     },
   });
   return (
@@ -112,9 +130,9 @@ function RecipeForm() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Recipe Image</Form.Label>
+          <Form.Label>Recipe Image Url</Form.Label>
           <Form.Control
-            type="file"
+            type="text"
             required
             id="image"
             name="image"

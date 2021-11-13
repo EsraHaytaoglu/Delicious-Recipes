@@ -36,6 +36,7 @@ function CommentForm() {
     navigate(`/${recipeId}`)
 
   }
+  
   return (
     <React.Fragment>
       <Alert show={show} variant="success"  className="container">
