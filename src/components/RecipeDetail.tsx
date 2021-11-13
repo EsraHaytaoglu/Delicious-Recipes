@@ -92,14 +92,9 @@ function RecipeDetail() {
                     <h2 className="card-title">{recipe.name}</h2>
                     <div>{recipe.description}</div>
                     <h3>İçindekiler</h3>
-
-                    {recipe.ingredients.map((ing, i) => {
-                      return (
-                        <div className="card-description subtle" key={i}>
-                          {ing.split("")}
+                        <div className="card-description subtle" >
+                          {recipe.ingredients}
                         </div>
-                      );
-                    })}
                     <span className="card-tag card-circle subtle">
                       {recipe.servesNumber} serves
                     </span>

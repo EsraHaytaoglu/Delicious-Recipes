@@ -6,6 +6,7 @@ import RecipeList from './components/RecipeList';
 import RecipeDetail from './components/RecipeDetail';
 import LikeList from './components/LikeList';
 import CommentForm from './components/CommentForm';
+import RecipeForm from './components/RecipeForm';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/:id"  element={<RecipeDetail />} />
         <Route path="/favs"  element={<LikeList />} />
         <Route path="/addComment"  element={<CommentForm />} />
+        <Route path="/add"  element={<RecipeForm />} />
       </Routes>
     </React.Fragment>
   );

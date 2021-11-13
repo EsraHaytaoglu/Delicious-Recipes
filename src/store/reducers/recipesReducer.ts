@@ -8,9 +8,9 @@ const defaultState: RecipeState = {
       id: 0,
       name: "",
       description: "",
-      ingredients: [],
+      ingredients: "",
       servesNumber: 0,
-      directions: [],
+      directions: "",
       totalTime: 0,
       image: "",
       author: "",
@@ -38,6 +38,12 @@ const recipesReducer = (state: RecipeState = defaultState, action: RecipeAction)
             recipe.id !== action.payload) };
         case "DELETE_RECIPE_ERROR":
           return { ...state, loading: false, error: "Error deleting recipe" };
+        case "ADD_RECIPE_START":
+          return { ...state, loading: true, error: "" };
+        case "ADD_RECIPE_SUCCES":
+          return { ...state, loading: false,  data: [action.payload, ...state.data], };
+        case "ADD_RECIPE_ERROR":
+          return { ...state, loading: false, error: "Error adding recipe" };
         default:
             return state;
     }

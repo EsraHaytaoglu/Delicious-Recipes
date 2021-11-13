@@ -2,7 +2,6 @@ import ReactDOM from "react-dom";
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { BrowserRouter } from "react-router-dom";

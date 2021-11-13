@@ -30,7 +30,7 @@ const SingleRecipe: FunctionComponent<IRecipeProps> = (props) => {
             <FaUsers /> Serves {recipe.servesNumber}
           </i>
           <p className="info">
-            {recipe.directions[0] + "..."}
+            {recipe.directions.substring(0, 100) + "..."}
             
           </p>
         </div>

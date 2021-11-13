@@ -11,9 +11,9 @@ export interface Recipe {
     id: Number,
     name: string,
     description: string,
-    ingredients: Array<string>,
+    ingredients: string,
     servesNumber: Number,
-    directions: Array<string>,
+    directions: string,
     totalTime: Number,
     image: any,
     author: string,
@@ -53,6 +53,18 @@ interface DELETE_RECIPE_ERROR {
 
 }
 
+interface ADD_RECIPE_START {
+    type: "ADD_RECIPE_START"
+}
+interface ADD_RECIPE_SUCCES {
+   type: "ADD_RECIPE_SUCCES";
+   payload: Recipe; 
+}
+interface ADD_RECIPE_ERROR {
+   type: "ADD_RECIPE_ERROR";
+
+}
+
 export type RecipeAction = 
 | GET_RECIPES_START
 | GET_RECIPES_SUCCES
@@ -63,5 +75,8 @@ export type RecipeAction =
 | DELETE_RECIPE_START
 | DELETE_RECIPE_SUCCES
 | DELETE_RECIPE_ERROR
+| ADD_RECIPE_START
+| ADD_RECIPE_SUCCES
+| ADD_RECIPE_ERROR
 
 export type RecipesDispatch = ThunkDispatch<RecipeState,void,RecipeAction>;

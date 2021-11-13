@@ -4,16 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import {useNavigate} from 'react-router-dom';
 
-import { AddCommentForm } from "../types/comments";
 import { AppState } from "../store";
 import { addComment } from "../store/actions/commentActions";
 import { Link } from "react-router-dom";
 
-const emptyForm: AddCommentForm = {
-  author: "",
-  body: "",
-  postId: 0,
-};
 
 function CommentForm() {
   const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
