@@ -86,7 +86,7 @@ function RecipeDetail() {
                       className="right"
                       onClick={() => handleClick(recipe)}
                     >
-                      Beğen <BsSuitHeart />
+                      Favorite <BsSuitHeart />
                     </button>
                     <span className="card-author subtle">{recipe.author}</span>
                     <h2 className="card-title">{recipe.name}</h2>
