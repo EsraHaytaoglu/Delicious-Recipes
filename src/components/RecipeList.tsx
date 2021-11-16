@@ -23,7 +23,7 @@ function RecipeList() {
     )}
     
     <Container fluid="xl" className="container">
-      <Row xs={1} md={3} sm={2}>
+      <Row xs={1} lg={3} md={2}>
         {data.map((recipe, i)=> (
           <SingleRecipe key={i} recipe={recipe} />
         ))}

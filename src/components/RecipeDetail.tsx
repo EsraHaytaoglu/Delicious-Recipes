@@ -43,6 +43,8 @@ function RecipeDetail() {
   const handleClose = () => {
     navigate("/");
   }
+  console.log(recipe.author);
+  
 
   return (
     <Container fluid="xl" className="container">
@@ -75,7 +77,7 @@ function RecipeDetail() {
           </Alert>
           )
         }
-        {!show && !loading && !alert && (
+        {!show && !loading && !alert && recipe.author  && (
           <React.Fragment>
               <div className="card-container">
                 <div className="card ">
@@ -103,7 +105,7 @@ function RecipeDetail() {
                   <img src={recipe.image} alt="" className="card-media" />
                   <div>
                     <Link to="/">
-                      <button className="backBtn right"> Back </button>
+                      <button className="backBtn"> Back </button>
                     </Link>
                     <button
                       className="delBtn"
@@ -118,6 +120,14 @@ function RecipeDetail() {
            
           </React.Fragment>
         )}
+        {
+          !recipe.author && !loading && (
+            <Container className="center mt-5">
+        <h3 > This recipe not found </h3>
+        <Link to="/"><div className="btn">Back</div></Link>
+        </Container>
+          )
+        }
         {loading && <Loading />}
       
     </Container>

@@ -112,9 +112,11 @@
     color: inherit;
   }
   .backBtn{
+    float: right;
     width: 20%;
     margin: 5%;
     padding: 0%;
+    background: transparent;
     color: inherit;
   }
 
@@ -129,7 +131,6 @@
     background: transparent;
     width: 20%;
     color: inherit;
-
     margin-left: 50%;
     margin-top: 5%;
   }
