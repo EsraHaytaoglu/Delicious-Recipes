@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../store";
 import { getRecipes } from "../store/actions/repiceActions";
 import Loading from "../utils/Loading";
-import Header from "./Header";
 import SingleRecipe from "./Recipe";
 
 function RecipeList() {
@@ -18,7 +17,7 @@ function RecipeList() {
   }, []);
   return (
     <React.Fragment>
-    <Header />
+    
     {loading && (
       <Loading />
     )}

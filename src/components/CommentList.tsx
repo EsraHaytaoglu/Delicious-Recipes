@@ -32,12 +32,12 @@ const CommentList:FunctionComponent<ICommentsProps> = (props) =>  {
     }
     
     return (
-        <div className="comment-container card u-clearfix">
+        <div className="comment-container ">
             <h3>Comments</h3>
-            <button className='right'onClick={addComment}>Add comment</button>
+            <button className='commentAdd'onClick={addComment}>Add comment</button>
             {data.map((yorum ,i) => (
                 <Row key={i} >
-                     <div className="card">
+                     <div className="yorum">
                      <h5 className="food">{yorum.author}</h5>
                      <div className="text">{yorum.body}</div>
                      <button className='deleteBtn' onClick={()=> handleDelete(yorum.id)} >Delete</button>

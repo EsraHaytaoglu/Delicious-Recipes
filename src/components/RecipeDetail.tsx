@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
-import { Alert, Button, Col, Row } from "react-bootstrap";
+import { Alert, Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import "../css/detail.css";
@@ -19,9 +19,11 @@ function RecipeDetail() {
 
   const dispatch = useDispatch();
   const recipe = useSelector((state: AppState) => state.recipes.currentRecipe);
+
   const loading = useSelector((state: AppState) => state.recipes.loading);
   const navigate = useNavigate();
   const [alert, setAlert] = useState<boolean>(false);
+  
 
   const [show, setShow] = useState<boolean>(false);
   useEffect(() => {
@@ -36,7 +38,6 @@ function RecipeDetail() {
   const handleDelete = (id: Recipe["id"]) => {
     dispatch(deleteRecipe(id));
     setAlert(true)
-   
   };
 
   const handleClose = () => {
@@ -44,18 +45,19 @@ function RecipeDetail() {
   }
 
   return (
-    <React.Fragment>
-      <Row>
-        <Alert show={show} variant="success" className="container">
-          <Alert.Heading>Success </Alert.Heading>
+    <Container fluid="xl" className="container">
+      
+        <Alert show={show} variant="success" className="alert">
+          <Alert.Heading>Success
+             </Alert.Heading>
           <p>
           This recipe added your fav list.
           </p>
           <hr />
           <div className="d-flex justify-content-end ">
-            <Button onClick={() => setShow(false)}>Close me</Button>
+            <span onClick={() => setShow(false)} className="alertSpan mr-2" >Close me</span>
             <Link to="/favs">
-              <Button>Go to Fav List</Button>
+              <span className="alertSpan mb-0">Go to Fav List</span>
             </Link>
           </div>
         </Alert>
@@ -75,11 +77,10 @@ function RecipeDetail() {
         }
         {!show && !loading && !alert && (
           <React.Fragment>
-            <Col>
               <div className="card-container">
-                <div className="card u-clearfix">
+                <div className="card ">
                   <div className="card-body">
-                    <span className="card-number card-circle subtle">
+                    <span className="card-number card-circle subtle h6">
                       {recipe.totalTime} min
                     </span>
                     <button
@@ -95,7 +96,7 @@ function RecipeDetail() {
                         <div className="card-description subtle" >
                           {recipe.ingredients}
                         </div>
-                    <span className="card-tag card-circle subtle">
+                    <span className="card-tag card-circle subtle h1">
                       {recipe.servesNumber} serves
                     </span>
                   </div>
@@ -113,15 +114,13 @@ function RecipeDetail() {
                   </div>
                 </div>
               </div>
-            </Col>
-            <Col>
               <CommentList id={recipe.id} />
-            </Col>
+           
           </React.Fragment>
         )}
         {loading && <Loading />}
-      </Row>
-    </React.Fragment>
+      
+    </Container>
   );
 }
 

@@ -40,7 +40,7 @@ function RecipeForm() {
     },
   });
   return (
-    <div className="container card">
+    <div className="container card mx-auto">
       <h3>Recipe Form</h3>
       <Form onSubmit={formik.handleSubmit}>
         <Form.Group className="mb-3">
@@ -141,7 +141,7 @@ function RecipeForm() {
           />
         </Form.Group>
 
-        <Button type="submit">Submit form</Button>
+        <Button type="submit" className="m-auto">Submit form</Button>
       </Form>
     </div>
   );

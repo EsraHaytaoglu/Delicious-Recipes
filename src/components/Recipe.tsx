@@ -1,14 +1,18 @@
 
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BsClock } from "react-icons/bs";
+import { BsClock, BsBookmarkHeart } from "react-icons/bs";
 import { FaUsers } from 'react-icons/fa';
+
 
 
 
 import "../css/recipe.css";
 import { Recipe } from "../types/recipes";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../store";
+import { getFavs } from "../store/actions/favActions";
 
 interface IRecipeProps {
   recipe: Recipe
@@ -16,9 +20,16 @@ interface IRecipeProps {
 
 const SingleRecipe: FunctionComponent<IRecipeProps> = (props) => {
   const { recipe } =props;
+  const dispatch = useDispatch();
+  const favList = useSelector((state: AppState) => state.favList.data);
+  console.log(favList , "favListtttt");
+  useEffect(() => {
+    dispatch(getFavs())
+  }, [])
+  
   return (
     <Col>
-      <div className="card">
+      <div className="ListCard">
         <Image
           src={recipe.image}
           className="header"
@@ -29,6 +40,12 @@ const SingleRecipe: FunctionComponent<IRecipeProps> = (props) => {
           <i className="fa fa-users">
             <FaUsers /> Serves {recipe.servesNumber}
           </i>
+          { favList !== undefined && favList.map(fav =>
+  (fav.id === recipe.id) &&
+    (
+      <i className="kalp">
+     <BsBookmarkHeart  size={20} /> 
+  </i> ))}
           <p className="info">
             {recipe.directions.substring(0, 100) + "..."}
             

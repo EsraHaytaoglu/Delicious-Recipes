@@ -1,14 +1,26 @@
-
+.alert{
+  max-width: 50%;
+  margin: auto;
+  margin-top: 15%;
+  background: transparent;
+  color: wheat;
+}
+.alert Button {
+  margin-left: 70%;
+}
   .card-container {
-    margin: 25px 0 0;
-    position: relative;
-    width: 100%;
-  }
-  .comment-container {
-    margin: 25px 0 0;
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 80%;
+    margin-left: 10%;
   }
+  .comment-container {
+    position: relative;
+    margin-left: 23%;
+    width: 110%;
+  }
+
   
   .card {
     padding: 30px;
@@ -17,11 +29,12 @@
   }
   
   .card-body {
-    width: 450px;
+    width: 100%;
   }
   
   .card-number {
     margin-top: 15px;
+    font-size: 20px;
   }
   
   .card-circle {
@@ -88,6 +101,12 @@
     padding: 3%;
     color: wheat;
   }
+  .commentAdd{
+    background: transparent;
+    padding: 1% 2%;
+    color: wheat;
+    margin-left: 35%;
+  }
   .backBtn{
     width: 20%;
     margin: 5%;
@@ -107,4 +126,24 @@
     margin-left: 50%;
     margin-top: 5%;
   }
-  
+  .alertSpan {
+    background: transparent;
+    color: wheat;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 10px;
+    
+    display: inline-block;
+    -webkit-transition: 250ms;
+  transition: 250ms;
+  border-style: ridge;
+  border-width: 0.5px;
+
+  }
+  .alertSpan:hover {
+    background: #0d6e6d;
+    -webkit-transition: 250ms;
+    transition: 250ms;
+    cursor: pointer;
+  }

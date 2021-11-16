@@ -7,11 +7,12 @@ import RecipeDetail from './components/RecipeDetail';
 import LikeList from './components/LikeList';
 import CommentForm from './components/CommentForm';
 import RecipeForm from './components/RecipeForm';
+import Header from './components/Header';
 
 function App() {
   return (
     <React.Fragment>
-      
+      <Header />
        <Routes>
         <Route path="/"  element={<RecipeList />} />
         <Route path="/:id"  element={<RecipeDetail />} />

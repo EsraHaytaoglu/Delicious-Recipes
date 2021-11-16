@@ -30,7 +30,7 @@ function LikeList() {
   };
 
   return (
-          <React.Fragment>
+    <Container fluid="xl" className="container">
       <h1>My Favorite Recipes</h1>
       {FavRecipes.length === 0 && (
         <Container className="center">
@@ -118,7 +118,7 @@ function LikeList() {
           </div>
     
           )) }
-      </React.Fragment>
+      </Container>
   );
 }
 

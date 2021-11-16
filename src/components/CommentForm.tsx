@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Alert, Button, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import {useNavigate} from 'react-router-dom';
@@ -38,7 +38,7 @@ function CommentForm() {
   }
   
   return (
-    <React.Fragment>
+    <Container fluid="xl" className="container ">
       <Alert show={show} variant="success"  className="container">
       <Alert.Heading>Success </Alert.Heading>
         <p>Your comment saved.</p>
@@ -72,16 +72,16 @@ function CommentForm() {
               value={formik.values.body}
             />
           </Form.Group>
-          <Button className="mr-3" type="submit">
+          <Button className="ml-0" type="submit">
             Submit
           </Button>
           <Link to={`/${recipeId}`}>
-            <Button>Back</Button>
+            <Button className="ml-4">Back</Button>
           </Link>
         </Form>
       </div>
       )}
-    </React.Fragment>
+    </Container>
   );
 }
 

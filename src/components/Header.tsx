@@ -1,6 +1,6 @@
 
 import React from "react";
-import { BsSuitHeart, BsPlusSquare } from "react-icons/bs";
+import { BsSuitHeartFill, BsPlusSquare } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import "../css/header.css"
@@ -18,8 +18,8 @@ function Header() {
       </div>
 
   </header>
-        <nav className="navMenu ">
-        <Link to="/favs"><div className="mr-5"> <BsSuitHeart /> Fav List   </div></Link>
+        <nav className="navMenu mb-2 ">
+        <Link to="/favs"><div className="mr-5"> <BsSuitHeartFill /> Fav List   </div></Link>
         <div className="dot"></div>
         <Link to="/add"><div> <BsPlusSquare /> Add a Recipe  </div></Link>
         <div className="dot"></div>
