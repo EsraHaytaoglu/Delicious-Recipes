@@ -47,7 +47,7 @@ function RecipeDetail() {
   return (
     <Container fluid="xl" className="container">
       
-        <Alert show={show} variant="success" className="alert">
+        <Alert show={show}  className="alert">
           <Alert.Heading>Success
              </Alert.Heading>
           <p>

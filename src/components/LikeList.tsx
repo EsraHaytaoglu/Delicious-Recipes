@@ -40,10 +40,10 @@ function LikeList() {
       ) }
       {FavRecipes.length !== 0 && 
            FavRecipes.map((favRecipe, i) => (
-            <div className="container mt-5 mb-5 bg " key={i}>
+            <div className=" mt-5 mb-5  " key={i}>
             <div className="d-flex justify-content-center row">
               <div className="col-md-10">
-                <div className="row p-2  border rounded">
+                <div className="row p-2  likeContainer ">
                   <div className="col-md-3 mt-1">
                     <img
                       className="img-fluid img-responsive rounded product-image"
@@ -85,7 +85,7 @@ function LikeList() {
                       <br />
                     </p>
                   </div>
-                  <div className="align-items-center align-content-center col-md-3 border-left mt-1">
+                  <div className="align-items-center align-content-center col-md-3 border-left  mt-1  border-dark" >
                     <div className="d-flex flex-row align-items-center">
                       <h4 className="mr-1">
                         {" "}
@@ -93,7 +93,7 @@ function LikeList() {
                       </h4>
                       <span className="strike-text">min</span>
                     </div>
-                    <h6 className="text-light">
+                    <h6 >
                       {" "}
                       <FaUsers /> Serves {favRecipe.servesNumber}
                     </h6>
@@ -104,7 +104,7 @@ function LikeList() {
                         </button>
                       </Link>
                       <button
-                        className="btn btn-outline-primary btn-sm mt-2"
+                        className="btn btn-primary btn-sm mt-2"
                         type="button"
                         onClick={() => deleteClick(favRecipe.id)}
                       >

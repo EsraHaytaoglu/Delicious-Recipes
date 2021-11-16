@@ -25,8 +25,11 @@ h1 {
 	letter-spacing: .01em;
 	padding: 2rem 0 0 4.5rem;
 	text-shadow: .022em .022em .022em #111;
-	color: wheat;
+  color: inherit;
   margin-left: 30%;
+}
+h1.light{
+  color: #272727;
 }
 /* width */
 ::-webkit-scrollbar {
