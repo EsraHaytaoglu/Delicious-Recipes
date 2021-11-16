@@ -1,71 +1,7 @@
-
-header {
-	background: url('https://images.squarespace-cdn.com/content/v1/58c0406fa5790a1ebbb38915/1545341206240-187MTPUBGYKIWHESUM2I/recipe+header-01.jpg?format=1000w');
-	text-align: center;
-	width: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	position: relative;
-	overflow: hidden;
-	display: block;
-	border-radius: 0 0 85% 85% / 30%;
-  box-shadow: 0px 0px 5px pink;
+.menu {
+    background:transparent;
+    padding: 1%;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 0px 50px 5px #000;
+    box-shadow: 0px 0px 100px 5px #000;
 }
-header .overlay{
-	width: 100%;
-	padding: 5px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg,  #272727 100%);
-	
-}
-
-.baslik {
-  font-family: 'Irish Grover', cursive !important;
-	font-weight: 700;
-	letter-spacing: .01em;
-	padding: 2rem 0 0 4.5rem;
-	text-shadow: .022em .022em .022em #111;
-  justify-content: center;
-}
-.julia {
- margin-left: 50%;
- color: wheat
-}
-.quote {
-  font-style: italic;
-  font-size: 30px;
-  font-weight: 700;
-	letter-spacing: .01em;
-	padding: 0 0 0 4.5rem;
-  color: white;
-}
-
-
-.navMenu {
-	position: relative;
-	margin-left: 58%;
-	margin-top: 2%;
-	margin-bottom: -4%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-  }
-  
-  .navMenu div {
-	color: #f6f4e6;
-	text-decoration: none;
-	font-size: 1.2em;
-	text-transform: uppercase;
-	font-weight: 500;
-	display: inline-block;
-	-webkit-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-  }
-  
-  .navMenu div:hover {
-	color: #fddb3a;
-  }
-  
-
-  
-

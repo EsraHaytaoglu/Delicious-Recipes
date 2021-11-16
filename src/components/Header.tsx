@@ -1,30 +1,22 @@
 
 import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { BsSuitHeartFill, BsPlusSquare } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 import "../css/header.css"
 
 function Header() {
   return (
-    <React.Fragment>
-    <header>
-    <div className="overlay d-none d-lg-block">
-  <div className="baslik"></div>
-  <div>
-  <div className="quote"> "I was 32 when I started cooking; up until then, I just ate."</div>
-  <span className="julia">Julia Child</span>
-  </div>
-      </div>
-
-  </header>
-        <nav className="navMenu mb-2 ">
-        <Link to="/favs"><div className="mr-5"> <BsSuitHeartFill /> Fav List   </div></Link>
-        <div className="dot"></div>
-        <Link to="/add"><div> <BsPlusSquare /> Add a Recipe  </div></Link>
-        <div className="dot"></div>
-      </nav>
-      </React.Fragment>
+    <Navbar className="menu" variant="dark">
+    <Container>
+    <Navbar.Brand href="/">Delicious Recipes</Navbar.Brand>
+    <Nav className="me-auto">
+    <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/favs">Favorite List</Nav.Link>
+      <Nav.Link href="/add">Add a Recipe</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
   );
 }
 

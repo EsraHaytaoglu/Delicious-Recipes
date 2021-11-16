@@ -1,14 +1,15 @@
-import React from "react"
-
+import React from "react";
 
 function Loading() {
- 
+  return (
+    <React.Fragment>
     
-    return (
-        <React.Fragment>
-       <h1 className="loading" >Loading..</h1>
-       </React.Fragment>
-    )
+      <div className="spinner-grow text-danger loading" role="status">
+      <h1>Loading..</h1>
+        <span className="sr-only">Loading...</span>
+      </div>
+    </React.Fragment>
+  );
 }
 
-export default Loading
+export default Loading;
