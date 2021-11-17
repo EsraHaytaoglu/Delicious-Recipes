@@ -38,17 +38,17 @@ h1.light{
   
   /* Track */
   ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px grey; 
+	box-shadow: inset 0 0 5px orange; 
 	border-radius: 10px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-	background: pink; 
+	background: orange; 
 	border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-	background: wheat; 
+	background: orange; 
   }

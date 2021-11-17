@@ -16,18 +16,17 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
   }
   .comment-container {
     position: relative;
-    margin-left: 23%;
-    width: 110%;
+    margin-left: 16%;
+    width: 135%;
   }
 
   
   .card {
-    padding: 30px;
+    padding: 3%;
     position: relative;
     z-index: 1;
   }
