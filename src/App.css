@@ -4,3 +4,11 @@
     margin-left: 38%;
 
 }
+.border {
+    border: none;
+    color: inherit;
+}
+.border:hover {
+    background: rgba(126, 114, 94, 0.973);
+
+}

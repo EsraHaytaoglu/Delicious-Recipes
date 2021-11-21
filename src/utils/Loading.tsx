@@ -6,7 +6,7 @@ function Loading() {
     
       <div className="spinner-grow text-danger loading" role="status">
       <h1>Loading..</h1>
-        <span className="sr-only">Loading...</span>
+       
       </div>
     </React.Fragment>
   );

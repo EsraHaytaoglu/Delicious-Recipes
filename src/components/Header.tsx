@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { BsSuitHeartFill, BsPlusSquare, BsMoon, BsSun } from "react-icons/bs";
+import { BsMoon, BsSun } from "react-icons/bs";
+import { MdAddCircleOutline } from "react-icons/md";
 
 import "../css/header.css";
 
@@ -13,7 +14,7 @@ function Header() {
       setDark(true)
     }
     document.body.classList.toggle('light');
-    console.log("teme");
+   
   }
   return (
     <Navbar collapseOnSelect className="menu"   expand="lg" variant={dark ? "dark" : "light" }>
@@ -28,9 +29,8 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/favs">Favorite List</Nav.Link>
-            <Nav.Link href="/add">Add a Recipe</Nav.Link>
+            <Nav.Link href="/add"><MdAddCircleOutline size={20}  /> Add a Recipe</Nav.Link>
           </Nav>
           <Nav className="d-flex mr-5">
             <div className="one-quarter " id="switch">

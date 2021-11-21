@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom';
 import { AppState } from "../store";
 import { addComment } from "../store/actions/commentActions";
 import { Link } from "react-router-dom";
+import "../App.css"
 
 
 function CommentForm() {
@@ -76,7 +77,7 @@ function CommentForm() {
             Submit
           </Button>
           <Link to={`/${recipeId}`}>
-            <Button className="ml-4">Back</Button>
+            <Button className="ml-4 ">Back</Button>
           </Link>
         </Form>
       </div>

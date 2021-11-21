@@ -106,8 +106,8 @@
   }
   .commentAdd{
     background: transparent;
-    padding: 1% 2%;
-    margin-left: 35%;
+    padding: 0.5% 2%;
+    margin-left: 468px;
     color: inherit;
   }
   .backBtn{
@@ -116,13 +116,13 @@
     margin: 5%;
     padding: 0%;
     background: transparent;
-    color: inherit;
+    text-decoration: none;
   }
 
   .deleteBtn {
     background: transparent;
-    width: 30%;
-    margin-left: 70%;
+    width: 20%;
+    margin-left: 80%;
     color: inherit;
 
   }
@@ -143,15 +143,25 @@
     display: inline-block;
     -webkit-transition: 250ms;
   transition: 250ms;
-  border-style: ridge;
-  border-width: 0.5px;
-  border-color: black;
+  background-color: rgb(27, 27, 27);
+  text-decoration: none;
+  color: wheat;
   
 
   }
   .alertSpan:hover {
-    background: #0d6e6d;
+    text-decoration: none;
+    background:  rgba(126, 114, 94, 0.973);
     -webkit-transition: 250ms;
     transition: 250ms;
     cursor: pointer;
   }
+  .deleteAlert {
+    border: none;
+    font-size: small;
+  }
+  .deleteAlert:hover {
+    background:  rgba(126, 114, 94, 0.973);
+
+  }
+

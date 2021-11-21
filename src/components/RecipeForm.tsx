@@ -141,7 +141,7 @@ function RecipeForm() {
           />
         </Form.Group>
 
-        <Button type="submit" className="m-auto">Submit form</Button>
+        <Button type="submit" className="m-auto border">Submit form</Button>
       </Form>
     </div>
   );

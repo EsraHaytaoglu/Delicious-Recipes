@@ -5,6 +5,7 @@ import { FaUsers } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { RiDeleteBin5Line } from "react-icons/ri"
 
 import "../css/like.css";
 import { AppState } from "../store";
@@ -99,22 +100,8 @@ function LikeList() {
                         {" "}
                         <FaUsers /> Serves {favRecipe.servesNumber}
                       </h6>
-                      <div className="d-flex flex-column mt-4">
-                        <Link to="/">
-                          <button
-                            className="btn btn-primary btn-sm "
-                            type="button"
-                          >
-                            Back to Home Page
-                          </button>
-                        </Link>
-                        <button
-                          className="btn btn-primary btn-sm mt-2"
-                          type="button"
-                          onClick={() => deleteClick(favRecipe.id)}
-                        >
-                          Remove to favs
-                        </button>
+                      <div className="d-flex flex-column mt-4 " onClick={() => deleteClick(favRecipe.id)}>
+                          <RiDeleteBin5Line size={28} />
                       </div>
                     </div>
                   </div>

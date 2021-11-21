@@ -30,10 +30,12 @@ const CommentList: FunctionComponent<ICommentsProps> = (props) => {
 
   return (
     <div className="comment-container ">
+      <div className="d-flex align-items-center">
       <h3>Comments</h3>
       <button className="commentAdd" onClick={addComment}>
         Add comment
       </button>
+      </div>
       {data.map((yorum, i) => (
         <Row key={i}>
           {yorum.author && (

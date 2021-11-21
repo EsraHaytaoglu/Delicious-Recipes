@@ -72,7 +72,7 @@ function RecipeDetail() {
             </p>
             <Link to="/">
               <Button onClick={() =>{handleClick(recipe)
-              handleClose()} }>Go to Home Page</Button>
+              handleClose()} } className="deleteAlert">Go to Home Page</Button>
             </Link>
           </Alert>
           )
@@ -85,12 +85,12 @@ function RecipeDetail() {
                     <span className="card-number card-circle subtle h6">
                       {recipe.totalTime} min
                     </span>
-                    <button
+                    <div
                       className="right"
                       onClick={() => handleClick(recipe)}
                     >
-                      Favorite <BsSuitHeart />
-                    </button>
+                       <BsSuitHeart  size={28} color="black"/>
+                    </div>
                     <span className="card-author subtle">{recipe.author}</span>
                     <h2 className="card-title">{recipe.name}</h2>
                     <div>{recipe.description}</div>
@@ -121,9 +121,9 @@ function RecipeDetail() {
           </React.Fragment>
         )}
         {
-          !recipe.author && !loading && (
+          !recipe.author && !loading && !alert && (
             <Container className="center mt-5">
-        <h3 > This recipe not found </h3>
+        <h3 > This recipe not found.</h3>
         <Link to="/"><div className="btn">Back</div></Link>
         </Container>
           )
