@@ -7,11 +7,11 @@
 + Typescript 
 + Redux Thunk
 
-### Rest Api
+## Rest Api
 Backend olarak json-server kullanarak oluşturduğum rest apiyi kullandım.
 [api linki ](https://esra-recipe.herokuapp.com/)
 
-### Api Endpoints 
+## Api Endpoints 
 
 ```
 GET    /recipes
@@ -26,6 +26,6 @@ DELETE /recipes/:id
 DELETE /favs/:id
 DELETE /comments/:id
 ```
-### Competition
+## Competition
 
-This project won an award in the competition organized by<a href="https://www.youtube.com/channel/UCfSw9Jm29lJHRKU4DmfH0vg">React Dersleri</a>.
+This project won an award in the competition organized by <a href="https://www.youtube.com/channel/UCfSw9Jm29lJHRKU4DmfH0vg"> React Dersleri</a>.
