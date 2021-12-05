@@ -26,3 +26,6 @@ DELETE /recipes/:id
 DELETE /favs/:id
 DELETE /comments/:id
 ```
+### Competition
+
+This project won an award in the competition organized by<a href="https://www.youtube.com/channel/UCfSw9Jm29lJHRKU4DmfH0vg">React Dersleri</a>.
